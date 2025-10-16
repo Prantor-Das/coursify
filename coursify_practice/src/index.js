@@ -1,13 +1,15 @@
 const express = require("express");
 const dotenv = require("dotenv");
-const { userRouter } = require("./src/routes/user");
-const { courseRouter } = require("./src/routes/course");
-const { adminRouter } = require("./src/routes/admin");
-const { connectDB } = require("./src/util/db");
+const { userRouter } = require("./routes/user");
+const { courseRouter } = require("./routes/course");
+const { adminRouter } = require("./routes/admin");
+const { connectDB } = require("./util/db");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-dotenv.config();
+dotenv.config({
+  path: "./.env",
+});
 
 app.use(express.json());
 

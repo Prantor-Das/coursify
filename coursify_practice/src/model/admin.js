@@ -1,4 +1,4 @@
-const { Schema } = require("mongoose");
+const { Schema, default: mongoose } = require("mongoose");
 
 const adminSchema = new Schema(
   {
@@ -23,4 +23,8 @@ const adminSchema = new Schema(
   { timestamps: true }
 );
 
-export const adminModel = mongoose.model("Admin", adminSchema);
+const adminModel = mongoose.model("Admin", adminSchema);
+
+module.exports = {
+  adminModel: adminModel,
+};
