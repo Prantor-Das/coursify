@@ -8,14 +8,16 @@ const courseSchema = new Schema(
     },
     description: {
       type: String,
+      required: true,
     },
     price: {
       type: Number,
+      required: true,
     },
     imageUrl: {
-      type: String,
+      type: String
     },
-    courseId: {
+    createdBy: {
       type: Schema.Types.ObjectId,
       ref: "Admin",
       required: true,

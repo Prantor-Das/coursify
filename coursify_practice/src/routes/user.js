@@ -1,11 +1,11 @@
 const { Router } = require("express");
 const { userModel } = require("../model/user");
 const jwt = require("jsonwebtoken");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 const userSecret = process.env.JWT_USER_SECRET || "default_user_secret";
-console.log("userSecret:", userSecret);
-console.log("JWT_USER_SECRET:", process.env.JWT_USER_SECRET);
-
 
 const userRouter = Router();
 
